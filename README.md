@@ -15,13 +15,14 @@ task-organizer is a web browser application with which you can manage all your h
 npm i
 🇧🇷
 
-3. Create a PostgreSQL database named database-task-organizer
+3. Create a PostgreSQL database with whatever name you want
+
+4. Configure the `.env` file using the `.env.example` file
+
+5. open the dump.sql file and run it in your database
 
 
-4. open the dump.sql file and run it in your database-task-organizer
-
-
-5. Run the backend:
+6. Run the backend:
   in the terminal, in the root folder of the project run:
 ```bash
 npx nodemon src/app.ts

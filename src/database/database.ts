@@ -1,6 +1,9 @@
 import pg from 'pg';
 const { Pool } = pg;
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 const databaseConfig = {
     connectionString: process.env.DATABASE_URL,
     ssl: {
@@ -8,12 +11,6 @@ const databaseConfig = {
     }
 }
 
-const connection = new Pool({
-    host: 'localhost',
-    port: 5432,
-    user: 'postgres',
-    password: '01234560',
-    database: 'database-task-organizer'
-});
+const connection = new Pool (databaseConfig);
 
 export {connection};
