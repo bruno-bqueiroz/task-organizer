@@ -13,7 +13,7 @@ task-organizer is a web browser application with which you can manage all your h
 
 ```bash
 npm i
-🇧🇷
+```
 
 3. Create a PostgreSQL database with whatever name you want
 
@@ -26,4 +26,33 @@ npm i
   in the terminal, in the root folder of the project run:
 ```bash
 npx nodemon src/app.ts
+```
+
+## Routes
+
+GET: /
+"list of users already registered"
+
+POST: /
+Body: { "name": "username" }
+"create new user"
+
+GET: /task
+"to-do list already registered"
+
+POST: /task
+Body: {
+"name": "task name", //string
+"userId": id of the user who will be responsible for the task, //number
+"date": "2022-11-11", // date
+"description": "task description", //string
+"done": true|| false // boolean
 🇧🇷
+"create new task"
+
+PUT: /task/:id
+Body:{ "done": true|| false // boolean }
+"pass the id of the task that will be updated by req.params and in the body a boolean with the status of the task"
+
+DELETE: /task/:id
+"pass the id of the task that will be deleted by req.params"
